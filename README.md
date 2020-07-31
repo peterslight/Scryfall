@@ -1,22 +1,21 @@
-# SafeBoda Android Code Challenge
+# Scryfall Magic Card Search API Implementation
 
-Hi and welcome to the SafeBoda Software Engineer (Android) challenge.
+Sample project that demonstrates usage of Dependency injection using Dagger-Hilt alongside Clean Architecture.
 
-Here is the chance for you to convince us that you are the right person for the job!
+## Resources
 
-We wish you good luck!
+* Base URL: https://api.scryfall.com/
+* CLEAN Architecture
+* MVVM
+* Retrofit
+* Dagger-Hilt
+* Timber
+* Glide
+* RxKotlin
+* Jetpack Navigation Components
 
-## Information
+## To Do List
 
-* You have 3 days since the moment you have received access to this private repository.
-* In the **Issues** section you will find an **issue** assigned to you with the description of the challenge.
-* After you have completed all the tasks of the challenge you should close the **issue** assigned to you. At that moment, you will not have more chances to add more commits to the repository, so close the **issue** when you feel confortable with you work.
-* Feel free to use Libraries or Frameworks that you usually work with. We expect that you complete the Android Code Challenge with *Kotlin*.
-* Take your time, do your best and good luck!
-
-**HINT:** We usually work with MVVM and RxKotlin.
-
-## Contact
-
-If you hace any doubt or question about the Android Code Challenge or about the company, please, feel free to contact us:
-* Engineering Manager @ Mobile Squad: Adrián (adrian@safeboda.com)
+* Add pagination to fetch more data
+* Implement Kotlin Coroutines in place of Flowables
+* Test the Adapter
