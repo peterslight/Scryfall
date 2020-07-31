@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/homeFragment4">
+
+    <fragment
+        android:id="@+id/homeFragment4"
+        android:name="com.peterstev.scryfall.presentation.fragments.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_homeFragment4_to_detailFragment4"
+            app:destination="@id/detailFragment4"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment4"
+        android:name="com.peterstev.scryfall.presentation.fragments.DetailFragment"
+        android:label="DetailFragment">
+
+        <action
+            android:id="@+id/action_detailFragment4_to_homeFragment4"
+            app:popUpTo="@id/homeFragment4" />
+    </fragment>
+</navigation>
