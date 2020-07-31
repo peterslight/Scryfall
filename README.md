@@ -1,6 +1,6 @@
 # Scryfall Magic Card Search API Implementation
 
-Sample project that demonstrates usage of Dependency injection using Dagger-Hilt alongside Clean Architecture.
+Sample project that demonstrates usage of Dependency injection using Dagger-Hilt alongside Clean Architecture and MVVM
 
 ## Resources
 
