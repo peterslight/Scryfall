@@ -2,6 +2,8 @@ package com.peterstev.scryfall.presentation.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.os.Debug
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,6 +22,8 @@ import com.peterstev.safebodachallengepeterslight.R
 import com.peterstev.scryfall.presentation.adapters.HomeAdapter
 import com.peterstev.scryfall.data.models.Data
 import com.peterstev.scryfall.data.response.Status
+import com.peterstev.scryfall.presentation.TIMBER_END
+import com.peterstev.scryfall.presentation.TIMBER_START
 import com.peterstev.scryfall.presentation.viewmodels.FragmentViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -72,12 +76,15 @@ class HomeFragment : Fragment(), HomeAdapter.OnCardClickListener {
             else Toast.makeText(requireContext(), "enter a text to search", Toast.LENGTH_SHORT)
                 .show()
         }
+
+        fragmentViewModel.fetchData("card")
     }
 
     private fun setupObserver() {
         fragmentViewModel.getLiveData().observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 Status.SUCCESS -> {
+                    Debug.stopMethodTracing()
                     refreshList(it.data!!)
                     Timber.i(it.message)
                     progress.visibility = View.GONE
@@ -86,14 +93,14 @@ class HomeFragment : Fragment(), HomeAdapter.OnCardClickListener {
                     progress.visibility = View.VISIBLE
                 }
                 Status.ERROR -> {
+                    Debug.stopMethodTracing()
                     progress.visibility = View.GONE
                     Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT)
                         .show()
                     Timber.i(it.message)
                 }
             }
-        })
-    }
+        })  }
 
     private fun refreshList(data: List<Data>) {
         adapter.updateList(data)
